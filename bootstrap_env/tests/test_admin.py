@@ -39,7 +39,7 @@ class TestBootstrapEnvAdmin(BootstrapEnvTestCase):
         output = self.bootstrap_env_admin_run("help")
         print(output)
 
-        self.assertIn("bootstrap_env_admin.py shell", output)
+        self.assertIn("bootstrap_env_admin shell", output)
 
         self.assertIn("Available commands (type help <topic>):", output)
 
@@ -53,7 +53,7 @@ class TestBootstrapEnvAdmin(BootstrapEnvTestCase):
         output = self.bootstrap_env_admin_run("foo bar is unknown ;)")
         print(output)
 
-        self.assertIn("bootstrap_env_admin.py shell", output)
+        self.assertIn("bootstrap_env_admin shell", output)
         self.assertIn("*** Unknown command: 'foo bar is unknown ;)' ***", output)
 
     @unittest.skipIf(path_helper.normal_mode, "Only available in 'developer' mode.")
@@ -261,6 +261,6 @@ class TestBootstrapEnvAdmin(BootstrapEnvTestCase):
             self.assertIn("src/bootstrap-env/bootstrap_env/requirements/developer_installation.txt", output)
 
         self.assertIn("Successfully installed bootstrap-env", output)
-        self.assertIn("Please restart bootstrap_env_admin.py", output)
+        self.assertIn("Please restart bootstrap_env_admin", output)
 
         self.assertNotIn("Error", output)

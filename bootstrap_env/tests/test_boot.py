@@ -48,7 +48,7 @@ class TestBootstrapEnvBoot(BootstrapEnvTestCase):
         output = self.boot_bootstrap_env_run("help")
         print(output)
 
-        self.assertIn("boot_bootstrap_env.py shell", output)
+        self.assertIn("boot_bootstrap_env shell", output)
         self.assertIn("Available commands (type help <topic>):", output)
 
         self.assertIn("boot", output)
