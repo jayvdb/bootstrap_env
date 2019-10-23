@@ -22,15 +22,13 @@ language: python
 
 python:
   - "3.6"
+  - "3.7"
+  - "3.8"
 
 matrix:
   include:
     - env: BOOT_MODE=boot
     - env: BOOT_MODE=boot_developer
-
-branches:
-  only:
-  - master
 
 before_install:
   - ls /opt/python/
